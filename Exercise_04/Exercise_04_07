@@ -1,0 +1,53 @@
+/*(Corner point coordinates) Suppose a pentagon is centered at (0, 0) with one point
+at the 0 o’clock position, as shown in Figure 4.7c. Write a program that prompts
+the user to enter the radius of the bounding circle of a pentagon and displays the
+coordinates of the five corner points on the pentagon. Here is a sample run:
+
+Enter the radius of the bounding circle: 100
+The coordinates of five points on the pentagon are
+(95.1057, 30.9017)
+(0.000132679, 100)
+(-95.1056, 30.9019)
+(-58.7788, -80.9015)
+(58.7782, -80.902)
+
+ */
+
+import java.util.Scanner;
+
+public class Exercise_04_07 {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the radius of the bounding circle: ");
+        double radius = input.nextDouble();
+
+        // Starts with 18 degrees, 360 divided by 5 is 72 degrees according to sample
+
+
+        double angleP1 = Math.toRadians(18);
+        double angleP2 = Math.toRadians(18 + 72);
+        double angleP3 = Math.toRadians(18 + 72 * 2);
+        double angleP4 = Math.toRadians(18 + 72 * 3);
+        double angleP5 = Math.toRadians(18 + 72 * 4);
+
+        double x1 = radius * Math.cos(angleP1);
+        double y1 = radius * Math.sin(angleP1);
+        double x2 = radius * Math.cos(angleP2);
+        double y2 = radius * Math.sin(angleP2);
+        double x3 = radius * Math.cos(angleP3);
+        double y3 = radius * Math.sin(angleP3);
+        double x4 = radius * Math.cos(angleP4);
+        double y4 = radius * Math.sin(angleP4);
+        double x5 = radius * Math.cos(angleP5);
+        double y5 = radius * Math.sin(angleP5);
+
+        System.out.println("The coordinates of five points on the pentagon are ");
+        System.out.println("(" + x1 + "," + y1 + ")");
+        System.out.println("(" + x2 + "," + y2 + ")");
+        System.out.println("(" + x3 + "," + y3 + ")");
+        System.out.println("(" + x4 + "," + y4 + ")");
+        System.out.println("(" + x5 + "," + y5 + ")");
+    }
+
+}
